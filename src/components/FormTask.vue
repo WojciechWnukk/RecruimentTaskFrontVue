@@ -60,7 +60,6 @@ export default {
         submitForm() {
             this.$axios.post('http://localhost:8000/api/contact', this.formData)
                 .then(response => {
-                    // Przetwarzaj odpowiedź od backendu
                     console.log(response.data);
 
                     this.submittedData.push(response.data.data);
@@ -73,21 +72,18 @@ export default {
                     };
                 })
                 .catch(error => {
-                    // Obsłuż błędy
                     console.error(error);
                 });
         },
         getAllData() {
             this.$axios.get('http://localhost:8000/api/contact')
                 .then(response => {
-                    // Przetwarzaj odpowiedź od backendu
                     console.log(response.data);
 
                     this.allData.push(response.data.data)
 
                 })
                 .catch(error => {
-                    // Obsłuż błędy
                     console.error(error);
                 });
         }
